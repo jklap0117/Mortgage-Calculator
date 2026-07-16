@@ -26,6 +26,11 @@
   --color-positive: #15803d;
   --color-negative: #b91c1c;
 
+  /* ---- Chart series (CVD-validated against the light card surface) ---- */
+  --chart-pi: #0d9488;
+  --chart-taxes: #2a78d6;
+  --chart-insurance: #c98500;
+
   /* ---- Typography ---- */
   --font-sans:
     "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
@@ -96,6 +101,11 @@
 
     --color-positive: #4ade80;
     --color-negative: #f87171;
+
+    /* Chart series re-stepped for the dark card surface */
+    --chart-pi: #0fa396;
+    --chart-taxes: #3987e5;
+    --chart-insurance: #c98500;
 
     --shadow-card:
       0 1px 2px rgba(0, 0, 0, 0.35),
