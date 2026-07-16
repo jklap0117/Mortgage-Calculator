@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local env files (FRED_API_KEY etc.)
+.env
+.env.*
+!.env.example
+
+# Netlify local state
+.netlify/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/

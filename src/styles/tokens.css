@@ -1,0 +1,104 @@
+/* ============================================================
+   Design tokens — Mortgage Calculator
+   Single source of truth for color, typography, and spacing.
+   Light theme is the default; dark theme via prefers-color-scheme.
+   ============================================================ */
+
+:root {
+  /* ---- Accent (one strong accent color: teal) ---- */
+  --color-accent: #0f766e;
+  --color-accent-strong: #0d5f59;
+  --color-accent-soft: #ccf3ef;
+  --color-on-accent: #ffffff;
+
+  /* ---- Surfaces ---- */
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-border: #e3e8ee;
+
+  /* ---- Text ---- */
+  --color-text: #0f1c2e;
+  --color-text-secondary: #55637a;
+  --color-text-muted: #8593a8;
+
+  /* ---- Feedback ---- */
+  --color-positive: #15803d;
+  --color-negative: #b91c1c;
+
+  /* ---- Typography ---- */
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-numeric-features: "tnum" 1, "lnum" 1;
+
+  --text-xs: 0.75rem;    /* 12px — captions, badges */
+  --text-sm: 0.875rem;   /* 14px — secondary text */
+  --text-md: 1rem;       /* 16px — body */
+  --text-lg: 1.125rem;   /* 18px — card titles */
+  --text-xl: 1.5rem;     /* 24px — page title */
+  --text-2xl: 2rem;      /* 32px — large figures */
+  --text-hero: 2.75rem;  /* 44px — the payment number */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+
+  /* ---- Spacing (4px base scale) ---- */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+
+  /* ---- Shape & elevation ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  --shadow-card:
+    0 1px 2px rgba(15, 28, 46, 0.05),
+    0 4px 12px rgba(15, 28, 46, 0.06);
+
+  /* ---- Layout ---- */
+  --layout-max-width: 40rem; /* 640px — comfortable on desktop */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-accent) 35%, transparent);
+
+  /* ---- Motion ---- */
+  --transition-fast: 150ms ease;
+  --transition-medium: 250ms ease;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #2dd4bf;
+    --color-accent-strong: #5eead4;
+    --color-accent-soft: #113b37;
+    --color-on-accent: #04211e;
+
+    --color-bg: #0b1220;
+    --color-surface: #121b2e;
+    --color-surface-raised: #16213a;
+    --color-border: #24304a;
+
+    --color-text: #e9eef6;
+    --color-text-secondary: #a3b0c5;
+    --color-text-muted: #6d7b93;
+
+    --color-positive: #4ade80;
+    --color-negative: #f87171;
+
+    --shadow-card:
+      0 1px 2px rgba(0, 0, 0, 0.35),
+      0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+}
