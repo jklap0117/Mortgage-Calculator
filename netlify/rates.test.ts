@@ -1,5 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import handler from './rates'
+// Lives one level above functions/ — Netlify deploys every file in that
+// directory as a function, and "rates.test" is not a valid function name.
+import handler from './functions/rates'
 
 function fredResponse(value: string, date = '2026-07-09') {
   return new Response(JSON.stringify({ observations: [{ date, value }] }), {
