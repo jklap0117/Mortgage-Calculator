@@ -9,7 +9,7 @@ A free, visually appealing, mobile-first mortgage calculator, deployed on Netlif
 | Rates source | FRED API (Federal Reserve / Freddie Mac weekly national averages) — free and reliable; updates weekly, requires a free API key |
 | Stack | Vite + React 18 + TypeScript, built fresh in this repo |
 | ARM display | Initial fixed-period payment only (no post-adjustment projections) |
-| Distribution | Netlify auto-deploy from this repo; installable PWA with offline support |
+| Distribution | Netlify auto-deploy from this repo's `main` branch; installable PWA with offline support |
 | Persistence | `localStorage` only — no backend, no accounts |
 
 ## Features
@@ -81,7 +81,7 @@ A free, visually appealing, mobile-first mortgage calculator, deployed on Netlif
 
 ## Build Phases
 
-One Fable session per phase, roughly one per day. Every phase ends with a commit and push so Netlify auto-deploys and progress is testable on the phone. Paste the block quote under each phase directly into Fable.
+One Fable session per phase, roughly one per day. Every phase is developed on a working branch and merged into `main` (the default branch) when verified — Netlify deploys `main`, so each merge makes progress testable on the phone. Paste the block quote under each phase directly into Fable.
 
 ### Phase 1 — Scaffold, design system, and Netlify deploy setup
 
