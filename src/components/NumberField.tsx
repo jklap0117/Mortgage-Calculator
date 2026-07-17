@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { sanitizeDecimalInput } from '../lib/format'
+import { parseNumeric, sanitizeDecimalInput } from '../lib/format'
 
 interface NumberFieldProps {
   label: string
@@ -11,6 +11,8 @@ interface NumberFieldProps {
   hint?: React.ReactNode
   /** Right-aligned control rendered in the label row (toggles, reset buttons). */
   labelAction?: React.ReactNode
+  /** Reject input that parses above this value (negatives are already impossible). */
+  max?: number
 }
 
 export default function NumberField({
@@ -22,6 +24,7 @@ export default function NumberField({
   placeholder,
   hint,
   labelAction,
+  max,
 }: NumberFieldProps) {
   const id = useId()
   return (
@@ -42,7 +45,11 @@ export default function NumberField({
           autoComplete="off"
           placeholder={placeholder}
           value={value}
-          onChange={(e) => onChange(sanitizeDecimalInput(e.target.value))}
+          onChange={(e) => {
+            const next = sanitizeDecimalInput(e.target.value)
+            if (max !== undefined && parseNumeric(next) > max) return
+            onChange(next)
+          }}
         />
         {suffix && <span className="field__adornment">{suffix}</span>}
       </div>
