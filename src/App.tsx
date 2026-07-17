@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import LoanDetailsForm, { type DownPaymentMode } from './components/LoanDetailsForm'
 import PaymentResult from './components/PaymentResult'
+import RatesBanner from './components/RatesBanner'
 import {
   autoLoanAmount,
   downPaymentDollars,
@@ -101,11 +102,10 @@ export default function App() {
       </header>
 
       <main style={{ display: 'contents' }}>
-        <PlaceholderCard
-          title="Current Rates"
-          description="Live 30-yr and 15-yr fixed national average rates from Freddie Mac, updated weekly."
-          phase="Phase 3"
-        />
+        <section className="card" aria-label="Current Rates">
+          <h2 className="card__title">Current Rates</h2>
+          <RatesBanner onUseRate={(r) => setRate(String(r))} />
+        </section>
 
         <section className="card" aria-label="Loan Details">
           <h2 className="card__title">Loan Details</h2>
