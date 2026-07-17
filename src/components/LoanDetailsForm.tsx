@@ -125,6 +125,7 @@ export default function LoanDetailsForm(props: LoanDetailsFormProps) {
         label="Interest rate"
         suffix="%"
         placeholder="6.5"
+        max={25}
         value={props.rate}
         onChange={props.onRateChange}
         hint={props.loanType !== '30fixed' ? 'Enter the ARM intro rate' : undefined}
